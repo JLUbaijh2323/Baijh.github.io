@@ -40,3 +40,136 @@ a{color:inherit;text-decoration:none}button,a{-webkit-tap-highlight-color:transp
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 @media(max-width:900px){.hero{grid-template-columns:1fr;gap:45px;padding-top:75px}.hero-visual{min-height:auto;place-items:start}.portrait-card{width:250px}.metrics{grid-template-columns:repeat(2,1fr)}.metrics article:nth-child(3){border-left:0;border-top:1px solid var(--line);padding-left:0}.metrics article:nth-child(4){border-top:1px solid var(--line)}.focus-grid{grid-template-columns:1fr}.awards-layout{grid-template-columns:1fr;gap:25px}.skills-panel{grid-template-columns:1fr}.contact-card{grid-template-columns:1fr}.contact-actions{justify-content:flex-start}}
 @media(max-width:720px){:root{--shell:min(100% - 30px,1080px)}.nav{min-height:64px}.brand-text{display:none}.nav-toggle{display:block}.nav-links{display:none;position:absolute;left:15px;right:15px;top:66px;margin:0;padding:12px;background:var(--paper);border:1px solid var(--line);border-radius:10px;flex-direction:column;gap:0;box-shadow:var(--shadow)}.nav-links.open{display:flex}.nav-links a{padding:9px}.hero{padding-block:58px 70px}.hero h1{font-size:44px}.hero-summary{font-size:15px}.hero-visual{order:-1}.portrait-card{width:180px}.portrait-caption{display:none}.metrics{grid-template-columns:1fr}.metrics article,.metrics article+article,.metrics article:nth-child(3){padding:16px 0;border-left:0;border-top:1px solid var(--line)}.metrics article:first-child{border-top:0}.section{padding-block:72px}.section-heading h2,.contact-card h2{font-size:34px}.projects-grid{grid-template-columns:1fr}.project-card,.project-card.featured{min-height:auto}.timeline-item{grid-template-columns:1fr;gap:8px;padding-left:20px}.timeline-item::before{left:4px;top:8px}.timeline-item::after{left:0;top:5px}.timeline-head{flex-direction:column}.skills-panel{padding:21px}.contact-card{padding:28px 22px}.contact-actions .button{width:100%}.footer-grid{grid-template-columns:1fr}.deployment-status{display:none}}
+
+
+/* Editorial academic refinement */
+:root{
+  --bg:#f8f7f3;
+  --bg-alt:#f1f2ee;
+  --paper:#fffefa;
+  --text:#202a2d;
+  --muted:#667276;
+  --soft:#8b9495;
+  --line:#daddd8;
+  --accent:#2f6b66;
+  --accent-soft:#e7efec;
+  --warm:#a66f50;
+  --shadow:0 24px 70px rgba(35,48,49,.09);
+  --radius:18px;
+  --shell:min(1120px,calc(100% - 56px));
+}
+html[data-theme="dark"]{
+  --bg:#111817;--bg-alt:#161f1e;--paper:#1a2422;--text:#eef2ef;
+  --muted:#a8b2af;--soft:#818d89;--line:#2b3835;--accent:#82b7ae;
+  --accent-soft:#1d322e;--warm:#d09a78;--shadow:0 24px 70px rgba(0,0,0,.24);
+}
+body{
+  background:
+    radial-gradient(circle at 88% 8%,color-mix(in srgb,var(--accent-soft) 62%,transparent) 0,transparent 28rem),
+    var(--bg);
+  letter-spacing:-.005em;
+}
+.site-header{background:color-mix(in srgb,var(--bg) 86%,transparent)}
+.nav{min-height:76px}
+.brand-mark{border-radius:10px;border-color:color-mix(in srgb,var(--accent) 28%,var(--line));box-shadow:0 5px 15px rgba(35,48,49,.05)}
+.brand-text{font-family:"Iowan Old Style","Palatino Linotype",Georgia,serif;font-size:18px;letter-spacing:-.02em}
+.nav-links{gap:30px}
+.nav-links a{position:relative;font-size:12px;font-weight:560;letter-spacing:.025em}
+.nav-links a::after{content:"";position:absolute;left:0;right:100%;bottom:-7px;height:1px;background:var(--accent);transition:right .25s ease}
+.nav-links a:hover::after{right:0}
+
+.hero{position:relative;grid-template-columns:minmax(0,1.5fr) minmax(260px,.5fr);gap:76px;padding-block:118px 112px}
+.hero::after{content:"";position:absolute;right:2%;top:14%;width:290px;height:290px;border:1px solid color-mix(in srgb,var(--accent) 13%,transparent);border-radius:50%;z-index:-1}
+.hero-copy{max-width:760px}
+.eyebrow{padding:7px 11px;border:1px solid var(--line);border-radius:999px;background:color-mix(in srgb,var(--paper) 76%,transparent);box-shadow:0 8px 24px rgba(35,48,49,.035)}
+.hero-kicker{margin:27px 0 15px;color:var(--warm);font-size:11px;letter-spacing:.17em}
+.hero h1{
+  max-width:12.2ch;
+  font-family:"Iowan Old Style","Palatino Linotype",Georgia,serif;
+  font-size:clamp(51px,5.8vw,72px);
+  line-height:.98;
+  letter-spacing:-.055em;
+  text-wrap:balance;
+}
+.hero h1>span{display:block}
+.gradient-text{margin-top:.11em;color:var(--accent);font-style:italic;font-weight:400}
+.hero-summary{max-width:650px;margin-top:30px;padding-left:18px;border-left:2px solid color-mix(in srgb,var(--accent) 46%,var(--line));font-size:16px;line-height:1.78}
+.hero-actions{margin-top:34px}
+.button{min-height:46px;padding-inline:19px;border-radius:999px;letter-spacing:.01em;box-shadow:0 7px 18px rgba(35,48,49,.035)}
+.button.primary{box-shadow:0 10px 24px color-mix(in srgb,var(--accent) 22%,transparent)}
+.button.primary:hover{transform:translateY(-1px)}
+.hero-links{margin-top:25px;gap:10px;font-size:11px;letter-spacing:.025em}
+
+.hero-visual{position:relative;min-height:440px}
+.portrait-card{position:relative;width:min(318px,100%);padding:0;border:0;border-radius:22px;background:transparent;box-shadow:none}
+.portrait-card::before{content:"";position:absolute;inset:-18px 22px 44px -18px;border-radius:24px;background:var(--accent-soft);transform:rotate(-2.5deg);z-index:-1}
+.portrait-frame{aspect-ratio:4/5;border:8px solid var(--paper);border-radius:18px;box-shadow:var(--shadow)}
+.portrait-frame img{filter:saturate(.91) contrast(1.02)}
+.portrait-caption{position:relative;width:88%;margin:-23px auto 0;padding:13px 15px;border:1px solid var(--line);border-radius:12px;background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(12px);box-shadow:0 15px 34px rgba(35,48,49,.10)}
+.portrait-caption strong{font-size:11px;letter-spacing:.02em}
+.portrait-caption small{font-size:10px}
+
+.metrics{position:relative;padding:8px 20px;border:1px solid var(--line);border-radius:20px;background:color-mix(in srgb,var(--paper) 86%,transparent);box-shadow:0 20px 55px rgba(35,48,49,.055)}
+.metrics article{padding-block:21px}
+.metrics span{color:var(--warm);letter-spacing:.13em}
+.metrics strong{font-family:"Iowan Old Style","Palatino Linotype",Georgia,serif;font-size:18px}
+
+.section{padding-block:116px}
+.section-heading{position:relative;padding-left:20px;margin-bottom:46px}
+.section-heading::before{content:"";position:absolute;left:0;top:4px;width:2px;height:44px;border-radius:2px;background:linear-gradient(var(--accent),var(--warm))}
+.section-index{letter-spacing:.18em}
+.section-heading h2,.contact-card h2{font-family:"Iowan Old Style","Palatino Linotype",Georgia,serif}
+.focus-grid{gap:18px}
+.focus-card{padding:29px;border-radius:20px;box-shadow:0 12px 35px rgba(35,48,49,.035);transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.focus-card::after{content:"";position:absolute;left:29px;right:29px;top:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:.55}
+.focus-card:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--accent) 36%,var(--line));box-shadow:0 20px 45px rgba(35,48,49,.07)}
+.focus-icon,.project-icon{border-radius:12px}
+.focus-card h3,.project-card h3{font-family:"Iowan Old Style","Palatino Linotype",Georgia,serif;font-size:19px;font-weight:600}
+
+.timeline-item{grid-template-columns:160px 1fr;gap:40px;padding-bottom:38px}
+.timeline-item::before{left:170px}
+.timeline-item::after{left:166px}
+.timeline-content{padding:24px 26px;border-radius:16px;box-shadow:0 10px 30px rgba(35,48,49,.03);transition:border-color .2s,transform .2s}
+.timeline-content:hover{border-color:color-mix(in srgb,var(--accent) 32%,var(--line));transform:translateX(2px)}
+.timeline-head h3{font-family:"Iowan Old Style","Palatino Linotype",Georgia,serif;font-size:18px}
+
+.projects-grid{gap:18px}
+.project-card,.project-card.featured{position:relative;overflow:hidden;min-height:312px;padding:29px;border-radius:20px;background:linear-gradient(145deg,var(--paper),color-mix(in srgb,var(--accent-soft) 24%,var(--paper)));box-shadow:0 12px 35px rgba(35,48,49,.035);transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.project-card::before{content:"";position:absolute;right:-44px;top:-44px;width:110px;height:110px;border:1px solid color-mix(in srgb,var(--accent) 13%,transparent);border-radius:50%}
+.project-card:hover{transform:translateY(-3px);box-shadow:0 20px 46px rgba(35,48,49,.07)}
+.project-badge{padding:4px 8px;border:1px solid var(--line);border-radius:999px;background:color-mix(in srgb,var(--paper) 72%,transparent)}
+.tag-row span{border-radius:999px;padding:4px 9px;font-weight:600}
+
+.award-list article{padding-block:24px}
+.award-list h3{font-family:"Iowan Old Style","Palatino Linotype",Georgia,serif;font-size:17px}
+.skills-panel{padding:31px;border-radius:20px;box-shadow:0 14px 38px rgba(35,48,49,.04)}
+.skill-cloud span{border-radius:999px;padding:5px 9px}
+.contact-card{padding:48px;border-radius:22px;background:linear-gradient(135deg,var(--paper),color-mix(in srgb,var(--accent-soft) 34%,var(--paper)));box-shadow:var(--shadow)}
+.footer{background:color-mix(in srgb,var(--bg-alt) 54%,transparent)}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;gap:58px;padding-top:86px}
+  .hero h1{max-width:13ch}
+  .hero-visual{place-items:center}
+  .portrait-card{width:285px}
+  .metrics{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:720px){
+  :root{--shell:min(100% - 34px,1120px)}
+  .nav{min-height:66px}
+  .hero{padding-block:64px 78px;gap:42px}
+  .hero::after{display:none}
+  .hero h1{font-size:clamp(42px,13vw,56px);max-width:11ch}
+  .hero-summary{padding-left:14px}
+  .hero-visual{order:initial}
+  .portrait-card{width:min(235px,76vw)}
+  .portrait-caption{display:flex}
+  .metrics{padding-inline:17px;border-radius:16px}
+  .section{padding-block:80px}
+  .section-heading{padding-left:15px;margin-bottom:34px}
+  .focus-card,.project-card,.project-card.featured{padding:24px}
+  .timeline-item{grid-template-columns:1fr;gap:9px;padding-left:23px}
+  .timeline-item::before{left:5px}
+  .timeline-item::after{left:1px}
+  .contact-card{padding:31px 24px}
+}
